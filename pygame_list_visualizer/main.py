@@ -1,34 +1,30 @@
 import random
 import pygame
 
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-clock = pygame.time.Clock() 
+ 
 #"numbers" is a list, put in None matching list if you dont want to use that "feature"
 class numbers_displayer:
-  def __init__(self, WIDTH, HEIGHT, numbers, scale, line_width, window_name, matching_list):
+  def __init__(self, WIDTH, HEIGHT, numbers, scale, window_name, matching_list):
     self.WIDTH = WIDTH
     self.HEIGHT = HEIGHT
     self.numbers = numbers
     self.scale = scale
-    self.line_width = line_width
     self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
     self.numbers_length = len(numbers)
     self.matching_list = matching_list
+    self.clock = pygame.time.Clock()
     pygame.display.set_caption(window_name)
  
   def update_screen(self):
-         self.screen.fill(BLACK)    
+         self.screen.fill((0, 0, 0))    
          for i in range(self.numbers_length):
              current_x = int(i * self.WIDTH / self.numbers_length)
              next_x = int((i + 1) * self.WIDTH / self.numbers_length)
              width = next_x - current_x 
              if not self.matching_list:
-                 color = WHITE
+                 color = (255, 255, 255)
              else:
-                 color = GREEN if self.matching_list[i] == self.numbers[i] else RED
+                 color = (0, 255, 0) if self.matching_list[i] == self.numbers[i] else (255, 0, 0)
              pygame.draw.rect(
                  self.screen, 
                  color, 
@@ -41,10 +37,3 @@ class numbers_displayer:
              )
          pygame.display.flip()
 
-
-#example usage:
-display = numbers_displayer(1000, 1000, [1, 2, 3], 1, 5, "example", [1, 2, 3])
-display.update_screen()
-
-while True:
-  clock.tick(67)
