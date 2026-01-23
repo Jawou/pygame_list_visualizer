@@ -4,6 +4,7 @@ setup.py
 pygame_list_visaulizer.egg-info/PKG-INFO
 pygame_list_visaulizer.egg-info/SOURCES.txt
 pygame_list_visaulizer.egg-info/dependency_links.txt
+pygame_list_visaulizer.egg-info/requires.txt
 pygame_list_visaulizer.egg-info/top_level.txt
 pygame_list_visualizer/__init__.py
 pygame_list_visualizer/main.py
