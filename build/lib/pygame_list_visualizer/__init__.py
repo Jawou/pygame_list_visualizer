@@ -1,2 +1,2 @@
-from .main import numbers_displayer
+from .main import visualize_list
 import pygame

@@ -1,11 +1,13 @@
-from pygame_list_visualizer import numbers_displayer
+from pygame_list_visualizer import visualize_list
 import random
 random_numbers = []
 for i in range(50):
     random_numbers.append(random.randint(0,410))
                      #      WIDTH, HEIGHT, numbers(a list), scale, window_name, matching_list(put None if want to display in white)
-screen = numbers_displayer(360, 480, random_numbers, 1, "merge-sort", sorted(random_numbers))
-
+screen = visualize_list(window_name="merge sort")
+screen.attach_list(random_numbers)
+screen.list_compare(sorted(random_numbers))
+screen.update_screen()
 #from https://www.geeksforgeeks.org
 def merge(arr, l, m, r, screen):
     n1 = m - l + 1
