@@ -3,7 +3,7 @@ import random
 random_numbers = []
 for i in range(50):
     random_numbers.append(random.randint(0,410))
-                     #      WIDTH, HEIGHT, numbers(a list), scale, window_name, matching_list(put None if want to display in white)
+                     #      WIDTH, HEIGHT, scale, window_name
 screen = visualize_list(window_name="merge sort")
 screen.attach_list(random_numbers)
 screen.list_compare(sorted(random_numbers))
